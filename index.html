@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>1/N박 기준 계산기 (달력 & API 연동)</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
+</head>
+<body>
+  <h2>1/N박 기준 계산기 (달력 & API 연동)</h2>
+  <label>예약번호</label>
+  <input type="text" id="resNum" onblur="fetchReservationData()" />
+
+  <label>기존 일정</label>
+  <input type="text" id="originalRange" placeholder="날짜를 선택하세요" />
+
+  <label>변경 일정</label>
+  <input type="text" id="newRange" placeholder="날짜를 선택하세요" />
+
+  <label>금액 정보</label>
+  <textarea id="amountInput" rows="4" placeholder="예: 호스트 임대료: 1,600,000원, 보증금: 300000원, 청소비: 50000원, 공과금: 150000원, 추가 인원비: 0원"></textarea>
+
+  <button onclick="runCalculation()">계산하기</button>
+  <button onclick="saveHistory()">저장</button>
+
+  <div id="summary" class="section"></div>
+  <div id="unitRates" class="section"></div>
+  <table id="resultTable" style="display:none;">
+    <thead><tr><th>항목</th><th>변경 전</th><th>변경 후</th><th>차액</th></tr></thead>
+    <tbody id="resultBody"></tbody>
+  </table>
+
+  <div id="memo" class="memo-section"></div>
+  <div id="cofinance" class="memo-section"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
