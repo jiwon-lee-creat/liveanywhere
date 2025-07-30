@@ -1,0 +1,11 @@
+
+body { font-family: sans-serif; padding: 20px; max-width: 720px; margin: auto; background-color: #f9f9f9; }
+input, textarea, button, select { width: 100%; margin-top: 8px; padding: 10px; font-size: 15px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box; }
+button { background: #007BFF; color: white; border: none; cursor: pointer; transition: background 0.2s; }
+button:hover { background: #0056b3; }
+label { font-weight: bold; margin-top: 12px; display: block; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+th, td { border: 1px solid #ccc; padding: 10px; text-align: right; }
+th:first-child, td:first-child { text-align: left; }
+.section { margin-top: 24px; font-weight: bold; font-size: 16px; color: #333; }
+.memo-section { white-space: pre-line; margin-top: 20px; font-size: 14px; color: #444; background: #fff; padding: 12px; border: 1px solid #ddd; border-radius: 6px; }

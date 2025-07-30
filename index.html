@@ -2,13 +2,15 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <title>1/N박 기준 계산기 (달력 & API 연동)</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>1/N박 기준 계산기</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://npmcdn.com/flatpickr/dist/l10n/ko.js"></script>
 </head>
 <body>
   <h2>1/N박 기준 계산기 (달력 & API 연동)</h2>
+
   <label>예약번호</label>
   <input type="text" id="resNum" onblur="fetchReservationData()" />
 
@@ -33,6 +35,20 @@
 
   <div id="memo" class="memo-section"></div>
   <div id="cofinance" class="memo-section"></div>
+
+  <div class="section">예약번호 조회</div>
+  <input type="text" id="searchResNum" placeholder="예약번호 입력 후 조회" />
+  <button onclick="searchByResNum()">조회</button>
+
+  <div class="section">날짜별 조회</div>
+  <input type="date" id="searchDate" />
+  <button onclick="filterByDate()">날짜 조회</button>
+
+  <div class="section">오늘 조회한 예약건</div>
+  <div id="todayResults"></div>
+
+  <div class="section">히스토리</div>
+  <ul id="historyList"></ul>
 
   <script src="script.js"></script>
 </body>
